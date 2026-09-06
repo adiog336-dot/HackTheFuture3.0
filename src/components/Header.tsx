@@ -4,7 +4,7 @@ import logo from '../../NavBar Logo.webp'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
-const links = ['Home', 'About', 'Tracks', 'Prizes', 'Timeline', 'Rules', 'FAQ', 'Contact']
+const links = ['Home', 'About', 'Tracks', 'Prizes', 'Timeline', 'Team', 'Rules', 'FAQ', 'Contact']
 const lightPages = ['/prizes', '/tracks', '/timeline', '/rules', '/faq', '/contact', '/problems']
 
 export function Header() {

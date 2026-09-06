@@ -784,6 +784,7 @@ export default function App() {
             <a href="/tracks">Tracks</a>
             <a href="/prizes">Prizes</a>
             <a href="/timeline">Timeline</a>
+            <a href="/team">Meet the Team</a>
           </div>
           <div className="hp-ft-col">
             <h4>Participate</h4>
