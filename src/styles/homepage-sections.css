@@ -2867,17 +2867,159 @@
   margin: 0 auto;
 }
 
-/* Visionary Leaders Grid */
-.hp-cg-grid {
-  max-width: 1000px;
+/* Visionary Leaders Container & Grid */
+.hp-cg-leaders-wrap {
+  max-width: 1040px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 180px;
-  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
   position: relative;
   z-index: 2;
+  padding: 0 16px;
+}
+
+.hp-cg-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
   align-items: center;
+}
+
+.hp-cg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 11px 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c084fc;
+  background: rgba(139, 54, 247, 0.15);
+  border: 1px solid rgba(139, 54, 247, 0.4);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.hp-cg-badge--green {
+  color: #a3e635;
+  background: rgba(163, 230, 53, 0.12);
+  border-color: rgba(163, 230, 53, 0.35);
+}
+
+/* Credentials Chips */
+.hp-cg-cred-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hp-cg-cred-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 13px 'Manrope', sans-serif;
+  color: #e2d9f3;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.hp-cg-cred-chip-icon {
+  color: #a3e635;
+  flex-shrink: 0;
+}
+
+/* Neon Quote Box matching user design reference */
+.hp-cg-quote-box {
+  position: relative;
+  background: rgba(212, 252, 56, 0.07);
+  border: 2px solid #d4fc38;
+  border-radius: 14px;
+  padding: 22px 24px 22px 30px;
+  margin-top: 4px;
+  box-shadow: 0 0 25px rgba(212, 252, 56, 0.12);
+}
+
+.hp-cg-quote-mark {
+  position: absolute;
+  top: -16px;
+  left: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 38px;
+  line-height: 1;
+  color: #d4fc38;
+  background: #08080b;
+  padding: 0 6px;
+}
+
+.hp-cg-quote-text {
+  margin: 0;
+  font: 600 14px/1.65 'Manrope', sans-serif;
+  color: #f4fce3;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* ── Shark Tank India Banner ── */
+.hp-cg-shark-tank-banner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(23, 15, 38, 0.95) 0%, rgba(12, 8, 20, 0.95) 100%);
+  border: 1.5px solid rgba(139, 54, 247, 0.4);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 54, 247, 0.15);
+  margin-top: 20px;
+}
+
+.hp-cg-st-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 11px 'DM Mono', monospace;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.hp-cg-st-title {
+  font: 800 clamp(18px, 2.2vw, 24px)/1.25 'Space Grotesk', sans-serif;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.hp-cg-st-sub {
+  font: 400 14px/1.6 'Manrope', sans-serif;
+  color: #b8b0cb;
+  margin: 0;
+}
+
+.hp-cg-st-right {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hp-cg-st-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
 }
 
 .hp-cg-details-side {
@@ -2887,9 +3029,9 @@
 }
 
 .hp-cg-ds-heading {
-  font: 800 clamp(24px, 3.5vw, 42px)/1.2 'Space Grotesk', sans-serif;
+  font: 800 clamp(22px, 3vw, 38px)/1.2 'Space Grotesk', sans-serif;
   color: var(--purple);
-  margin: 0 0 32px;
+  margin: 0 0 24px;
   text-transform: uppercase;
   letter-spacing: -0.5px;
 }
@@ -2897,11 +3039,11 @@
 .hp-cg-ds-desc {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .hp-cg-ds-strong {
-  font: 600 16px/1.6 'Manrope', sans-serif;
+  font: 600 15px/1.6 'Manrope', sans-serif;
   color: #ffffff;
   margin: 0;
   padding-left: 16px;
@@ -2910,8 +3052,8 @@
 }
 
 .hp-cg-ds-sub {
-  font: 400 15px/1.6 'Manrope', sans-serif;
-  color: rgba(255, 255, 255, 0.6);
+  font: 400 14.5px/1.6 'Manrope', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
   margin: 0;
   text-transform: uppercase;
 }
@@ -3054,19 +3196,32 @@
 @media (max-width: 900px) {
   .hp-cg-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
-    max-width: 500px;
+    gap: 36px;
+    max-width: 520px;
+    margin: 0 auto;
   }
 
   .hp-cg-speaker-card {
-    height: 420px;
+    height: 400px;
     order: -1;
+  }
+
+  .hp-cg-shark-tank-banner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .hp-cg-cred-chip {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }
 
 @media (max-width: 500px) {
   .hp-cg-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .hp-cg-details-side {
@@ -3074,7 +3229,15 @@
   }
 
   .hp-cg-speaker-card {
-    height: 340px;
+    height: 320px;
+  }
+
+  .hp-cg-quote-box {
+    padding: 18px 16px;
+  }
+
+  .hp-cg-quote-text {
+    font-size: 12.5px;
   }
 }
 
@@ -3580,30 +3743,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 16px 24px;
-  border: 1.5px dashed #ddd5e8;
-  background: #faf7ff;
-  border-radius: 8px;
-  transition: border-color .2s, background .2s, transform .2s;
+  gap: 14px;
+  padding: 12px 26px;
+  border: 1px solid #e7dfef;
+  background: #ffffff;
+  border-radius: 12px;
+  transition: border-color .25s ease, background .25s ease, transform .25s ease, box-shadow .25s ease;
   cursor: pointer;
+  box-shadow: 0 4px 14px rgba(139, 54, 247, 0.05);
 }
 
 .hp-spon-marquee-logo:hover {
-  border-color: #7c3aed;
-  background: #f5f0ff;
-  transform: translateY(-2px);
+  border-color: #8b36f7;
+  background: #faf7ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(139, 54, 247, 0.16);
+}
+
+.hp-spon-marquee-img {
+  height: 36px;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.hp-spon-marquee-logo:hover .hp-spon-marquee-img {
+  transform: scale(1.05);
 }
 
 .hp-spon-marquee-logo span {
-  font: 700 14px 'Space Grotesk', sans-serif;
-  color: #3b0764;
+  font: 700 13.5px 'Space Grotesk', sans-serif;
+  color: #271241;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.hp-spon-marquee-logo svg {
-  color: #7c3aed;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
 }
 
 @keyframes marqueeScroll {

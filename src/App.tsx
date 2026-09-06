@@ -1,9 +1,9 @@
 import { Header } from './components/Header'
 import { MatrixRain } from './components/MatrixRain'
 import { JourneyMap } from './components/JourneyMap'
+import { HeroImageStack } from './components/HeroImageStack'
 import { event } from './data/event'
 import mascot from '../Website Mascot.webp'
-import homeAboutImg from '../HomeAbout section.png'
 import navLogo from '../NavBar Logo.webp'
 import prizesMascot from '../Mascots Variations/Prize2 (3).webp'
 import trackMascot from '../Mascots Variations/trackhomepage.webp'
@@ -180,6 +180,7 @@ const HOME_REVEAL_SELECTORS = '.stats article, .about > div > *, .about-image-fu
 
 export default function App() {
   const [cgImageLoaded, setCgImageLoaded] = useState(false)
+  const [coImageLoaded, setCoImageLoaded] = useState(false)
   const container = useRef<HTMLElement>(null)
 
   // Keep ScrollTrigger synced with Lenis smooth scroll so triggers never misfire.
@@ -374,11 +375,7 @@ export default function App() {
             and build solutions with real product potential, entrepreneurship mindset and scalable impact.
           </p>
         </div>
-        <img
-          className="about-image-full"
-          src={homeAboutImg}
-          alt="Tulas University campus and students hacking at Hack The Future 3.0"
-        />
+        <HeroImageStack />
         <div className="about-bottom-row">
           <a className="button button-outline about-know-more" href="/about">Know more about <strong>→</strong></a>
           <p className="about-pipeline">
@@ -569,15 +566,14 @@ export default function App() {
               {[0, 1].map((blockIdx) => (
                 <div key={blockIdx} className="hp-spon-marquee-content">
                   {[
-                    { name: ' Coming Soon', icon: Globe },
-                    { name: 'Coming Soon', icon: Zap },
-                    { name: 'Coming Soon', icon: Rocket },
-                    { name: 'Coming Soon', icon: Landmark },
-                    { name: 'Coming Soon', icon: Shield },
-                    { name: 'Coming Soon', icon: Sparkles },
-                  ].map(({ name, icon: Icon }, i) => (
-                    <div key={i} className="hp-spon-marquee-logo">
-                      <Icon size={32} />
+                    { name: 'Unstop', logo: '/sponser/Unstop-Logo-Blue-Large.png' },
+                    { name: 'TIDES IIT Roorkee', logo: '/sponser/tides.iitr.png' },
+                    { name: 'Cloud Security Alliance', logo: '/sponser/CSA-logo.png' },
+                    { name: 'Global Trading Technologies', logo: '/sponser/Global_Trading_Technologies.png' },
+                    { name: '.XYZ Domains', logo: '/sponser/xyz-logo-color.png' },
+                  ].map(({ name, logo }, i) => (
+                    <div key={i} className="hp-spon-marquee-logo" title={name}>
+                      <img src={logo} alt={name} className="hp-spon-marquee-img" />
                       <span>{name}</span>
                     </div>
                   ))}
@@ -610,35 +606,83 @@ export default function App() {
           </p>
         </div>
 
-        <div className="hp-cg-grid">
-          <div className="hp-cg-details-side hp-cg-details-col">
-            <h3 className="hp-cg-ds-heading">
-              BUILDING A BRIDGE<br />BETWEEN FARMERS AND CONSUMERS
-            </h3>
-            <div className="hp-cg-ds-desc">
-              <p className="hp-cg-ds-strong">
-                ABHINAV AHLUWALIA IS THE FOUNDER AND CEO OF KIWI KISAN WINDOW, A DEHRADUN-BASED VENTURE FOUNDED IN 2017 WITH HIS WIFE AND CO-FOUNDER, NUPUR AGARWAAL.
-              </p>
-              <p className="hp-cg-ds-sub">
-                TOGETHER, THEY BUILT KIWI WITH A VISION TO BRING AUTHENTIC REGIONAL PRODUCTS TO CONSUMERS WHILE CREATING STRONGER MARKET OPPORTUNITIES FOR FARMERS AND RURAL COMMUNITIES.
-              </p>
+        <div className="hp-cg-leaders-wrap">
+          {/* ── Leader 1: Abhinav Ahluwalia (Founder & CEO) ── */}
+          <div className="hp-cg-grid">
+            <div className="hp-cg-details-side hp-cg-details-col">
+              <span className="hp-cg-badge hp-cg-badge--green">Founder &amp; CEO</span>
+              <h3 className="hp-cg-ds-heading">
+                BUILDING A BRIDGE<br />BETWEEN FARMERS AND CONSUMERS
+              </h3>
+              
+              <div className="hp-cg-ds-desc hp-cg-quote-box">
+                <p className="hp-cg-ds-strong">
+                  ABHINAV AHLUWALIA IS THE FOUNDER AND CEO OF KIWI KISAN WINDOW, A DEHRADUN-BASED VENTURE FOUNDED IN 2017 WITH HIS WIFE AND CO-FOUNDER, NUPUR AGARWAAL.
+                </p>
+                <p className="hp-cg-ds-sub">
+                  TOGETHER, THEY BUILT KIWI WITH A VISION TO BRING AUTHENTIC REGIONAL PRODUCTS TO CONSUMERS WHILE CREATING STRONGER MARKET OPPORTUNITIES FOR FARMERS AND RURAL COMMUNITIES.
+                </p>
+              </div>
             </div>
+            <a href="https://www.linkedin.com/in/abhinav-ahluwalia-153874142/" target="_blank" rel="noopener noreferrer" className="hp-cg-speaker-card hp-cg-photo-card">
+              {!cgImageLoaded && <div className="hp-cg-img-skeleton" />}
+              <img 
+                src="/chief-guest.webp" 
+                alt="Abhinav Ahluwalia" 
+                className={`hp-cg-sc-img ${cgImageLoaded ? 'loaded' : ''}`} 
+                onLoad={() => setCgImageLoaded(true)}
+              />
+              <div className="hp-cg-sc-overlay" />
+              <div className="hp-cg-sc-content">
+                <h4>Abhinav Ahluwalia</h4>
+                <p>Founder &amp; CEO, Kiwi Kisan Window</p>
+                <span className="hp-cg-sc-details">View Profile <ArrowUpRight size={14} /></span>
+              </div>
+            </a>
           </div>
-          <a href="https://www.linkedin.com/in/abhinav-ahluwalia-153874142/" target="_blank" rel="noopener noreferrer" className="hp-cg-speaker-card hp-cg-photo-card">
-            {!cgImageLoaded && <div className="hp-cg-img-skeleton" />}
-            <img
-              src="/chief-guest.webp"
-              alt="Abhinav Ahluwalia"
-              className={`hp-cg-sc-img ${cgImageLoaded ? 'loaded' : ''}`}
-              onLoad={() => setCgImageLoaded(true)}
-            />
-            <div className="hp-cg-sc-overlay" />
-            <div className="hp-cg-sc-content">
-              <h4>Abhinav Ahluwalia</h4>
-              <p>Founder & CEO, Kiwi Kisan Window</p>
-              <span className="hp-cg-sc-details">Details <ArrowUpRight size={14} /></span>
+
+          {/* ── Leader 2: Nupur Agarwaal (Co-Founder & CEO) ── */}
+          <div className="hp-cg-grid">
+            <div className="hp-cg-details-side hp-cg-details-col">
+              <span className="hp-cg-badge hp-cg-badge--green">Co-Founder &amp; CEO</span>
+              <h3 className="hp-cg-ds-heading">
+                EMPOWERING FARMERS &amp;<br />CELEBRATING CULINARY DIVERSITY
+              </h3>
+
+              {/* Education & Social Credentials */}
+             
+
+              <div className="hp-cg-ds-desc">
+                <div className="hp-cg-quote-box hp-cg-ds-desc hp-cg-quote-box">
+                  
+                  <p className='hp-cg-ds-strong'>
+                    <span>Associated with Dehradun Drum Circle &amp; Evolve Foundation</span>
+                  </p>
+                  <p className="hp-cg-quote-text">
+                    AN ENTREPRENEUR AND SOCIAL-IMPACT PROFESSIONAL, NUPUR HAS BEEN INSTRUMENTAL IN SHAPING KIWI'S VISION AND GROWTH. WITH A BACKGROUND IN BUSINESS STUDIES FROM LANCASTER UNIVERSITY AND EXPERIENCE WITH COMMUNITY-FOCUSED INITIATIVES, SHE BRINGS CREATIVITY AND PURPOSE TO KIWI'S JOURNEY OF CELEBRATING INDIA'S CULINARY DIVERSITY AND EMPOWERING FARMERS.
+                  </p>
+                </div>
+              </div>
             </div>
-          </a>
+            <a href="https://www.linkedin.com/in/nupuragarwal20/" target="_blank" rel="noopener noreferrer" className="hp-cg-speaker-card hp-cg-photo-card">
+              {!coImageLoaded && <div className="hp-cg-img-skeleton" />}
+              <img 
+                src="/nupur-agarwaal.jpg" 
+                alt="Nupur Agarwaal" 
+                className={`hp-cg-sc-img ${coImageLoaded ? 'loaded' : ''}`} 
+                onLoad={() => setCoImageLoaded(true)}
+              />
+              <div className="hp-cg-sc-overlay" />
+              <div className="hp-cg-sc-content">
+                <h4>Nupur Agarwaal</h4>
+                <p>Co-Founder &amp; CEO, Kiwi Kisan Window</p>
+                <span className="hp-cg-sc-details">View Profile <ArrowUpRight size={14} /></span>
+              </div>
+            </a>
+          </div>
+
+          {/* ── Highlight: Shark Tank India ₹2.5 Crore Triumph ── */}
+          
         </div>
       </section>
 
