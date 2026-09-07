@@ -195,7 +195,7 @@ export default function App() {
         .from('.hero-tagline-row', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
         .from('.event-meta span', { y: 20, opacity: 0, stagger: 0.2, duration: 0.8, ease: 'power3.out' }, '-=0.6')
         .from('.actions .button', { y: 20, opacity: 0, stagger: 0.2, duration: 0.8, ease: 'power3.out' }, '-=0.6')
-        .from('.hero-mascot-image', { x: 50, opacity: 0, duration: 1, ease: 'power3.out' }, 0.2)
+        .from('.hero-mascot-wrap', { x: 50, opacity: 0, duration: 1, ease: 'power3.out', clearProps: 'opacity' }, 0.2)
         .from('.status', { scale: 0.8, opacity: 0, duration: 0.8, ease: 'back.out(1.7)' }, 0.6)
 
       // ── Reveal helpers (fromTo + once = never stuck invisible; clearProps
@@ -343,7 +343,11 @@ export default function App() {
             <a className="button button-outline" href="#about">Explore event</a>
           </div>
         </div>
-        <img className="hero-mascot hero-mascot-image" src={mascot} alt="Hack the Future mascot holding a laptop and giving a thumbs-up" />
+
+        <div className="hero-mascot-wrap">
+          <img className="hero-mascot hero-mascot-image" src={mascot} alt="Hack the Future mascot holding a laptop and giving a thumbs-up" />
+          <div className="hero-mascot-ground-shadow" aria-hidden="true" />
+        </div>
       </section>
 
       {/* ═══════════ STATS BAR ═══════════ */}
@@ -612,15 +616,15 @@ export default function App() {
             <div className="hp-cg-details-side hp-cg-details-col">
               <span className="hp-cg-badge hp-cg-badge--green">Founder &amp; CEO</span>
               <h3 className="hp-cg-ds-heading">
-                BUILDING A BRIDGE<br />BETWEEN FARMERS AND CONSUMERS
+                Building a Bridge Between<br />Farmers and Consumers
               </h3>
               
               <div className="hp-cg-ds-desc hp-cg-quote-box">
                 <p className="hp-cg-ds-strong">
-                  ABHINAV AHLUWALIA IS THE FOUNDER AND CEO OF KIWI KISAN WINDOW, A DEHRADUN-BASED VENTURE FOUNDED IN 2017 WITH HIS WIFE AND CO-FOUNDER, NUPUR AGARWAAL.
+                  A visionary entrepreneur who co-founded Kiwi Kisan Window in 2017 — a Dehradun-based agri-commerce venture dedicated to connecting India's rural farming communities with modern urban markets.
                 </p>
                 <p className="hp-cg-ds-sub">
-                  TOGETHER, THEY BUILT KIWI WITH A VISION TO BRING AUTHENTIC REGIONAL PRODUCTS TO CONSUMERS WHILE CREATING STRONGER MARKET OPPORTUNITIES FOR FARMERS AND RURAL COMMUNITIES.
+                  Under his leadership, Kiwi has emerged as a platform championing authentic regional produce, bridging the gap between traditional farmers and contemporary consumer ecosystems — and earning national recognition on Shark Tank India.
                 </p>
               </div>
             </div>
@@ -646,22 +650,19 @@ export default function App() {
             <div className="hp-cg-details-side hp-cg-details-col">
               <span className="hp-cg-badge hp-cg-badge--green">Co-Founder &amp; CEO</span>
               <h3 className="hp-cg-ds-heading">
-                EMPOWERING FARMERS &amp;<br />CELEBRATING CULINARY DIVERSITY
+                Empowering Farmers &amp;<br />Celebrating Culinary Diversity
               </h3>
 
               {/* Education & Social Credentials */}
              
 
-              <div className="hp-cg-ds-desc">
-                <div className="hp-cg-quote-box hp-cg-ds-desc hp-cg-quote-box">
-                  
-                  <p className='hp-cg-ds-strong'>
-                    <span>Associated with Dehradun Drum Circle &amp; Evolve Foundation</span>
-                  </p>
-                  <p className="hp-cg-quote-text">
-                    AN ENTREPRENEUR AND SOCIAL-IMPACT PROFESSIONAL, NUPUR HAS BEEN INSTRUMENTAL IN SHAPING KIWI'S VISION AND GROWTH. WITH A BACKGROUND IN BUSINESS STUDIES FROM LANCASTER UNIVERSITY AND EXPERIENCE WITH COMMUNITY-FOCUSED INITIATIVES, SHE BRINGS CREATIVITY AND PURPOSE TO KIWI'S JOURNEY OF CELEBRATING INDIA'S CULINARY DIVERSITY AND EMPOWERING FARMERS.
-                  </p>
-                </div>
+              <div className="hp-cg-ds-desc hp-cg-quote-box">
+                <p className='hp-cg-ds-strong'>
+                  A social entrepreneur and purpose-driven leader, Nupur Agarwaal is the Co-Founder &amp; CEO of Kiwi Kisan Window and a founding associate of the Dehradun Drum Circle &amp; Evolve Foundation.
+                </p>
+                <p className="hp-cg-ds-sub">
+                  A Lancaster University alumna in Business Studies, she brings a rare synthesis of strategic vision and community-first leadership — steering Kiwi's mission to honour India's rich culinary heritage while creating meaningful economic pathways for its farming communities.
+                </p>
               </div>
             </div>
             <a href="https://www.linkedin.com/in/nupuragarwal20/" target="_blank" rel="noopener noreferrer" className="hp-cg-speaker-card hp-cg-photo-card">
@@ -682,7 +683,29 @@ export default function App() {
           </div>
 
           {/* ── Highlight: Shark Tank India ₹2.5 Crore Triumph ── */}
-          
+          <div className="hp-cg-deal-banner">
+            <div className="hp-cg-deal-glow" aria-hidden="true" />
+            
+            <div className="hp-cg-deal-tag">
+              <span className="hp-cg-deal-tag-dot" />
+              <span>SHARK TANK INDIA HIGHLIGHT</span>
+            </div>
+
+            <div className="hp-cg-deal-card">
+              <div className="hp-cg-deal-border-beam" aria-hidden="true" />
+              <div className="hp-cg-deal-sheen" aria-hidden="true" />
+              
+              <div className="hp-cg-deal-media">
+                <img
+                  src="/deal.png"
+                  alt="Kiwi Kisan Window ₹2.5 Crore Equity Triumph on Shark Tank India"
+                  className="hp-cg-deal-img"
+                />
+                <div className="hp-cg-deal-overlay" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
