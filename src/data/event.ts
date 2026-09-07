@@ -13,7 +13,7 @@ export const event = {
   round1Fee: 'Free',
   finalRoundFee: '₹500 per participant',
   registrationUrl: 'https://unstop.com/o/gzD1w2X?lb=WtTeW2Xc&utm_medium=Share&utm_source=Codex_GS&utm_campaign=Online_coding_challenge', // Replace with official Unstop / registration URL
-  contactEmail: 'Hackathon@tulas.edu.in',
+  contactEmail: 'acmtulas@gmail.com',
   format: 'Online Shortlisting + Offline Grand Finale',
 }
 
