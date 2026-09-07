@@ -653,19 +653,13 @@ export default function App() {
                 Empowering Farmers &amp;<br />Celebrating Culinary Diversity
               </h3>
 
-              {/* Education & Social Credentials */}
-             
-
-              <div className="hp-cg-ds-desc">
-                <div className="hp-cg-quote-box hp-cg-ds-desc hp-cg-quote-box">
-                  
-                  <p className='hp-cg-ds-strong'>
-                    <span>Associated with Dehradun Drum Circle &amp; Evolve Foundation</span>
-                  </p>
-                  <p className="hp-cg-ds-sub">
-                    AN ENTREPRENEUR AND SOCIAL-IMPACT PROFESSIONAL, NUPUR HAS BEEN INSTRUMENTAL IN SHAPING KIWI'S VISION AND GROWTH. WITH A BACKGROUND IN BUSINESS STUDIES FROM LANCASTER UNIVERSITY AND EXPERIENCE WITH COMMUNITY-FOCUSED INITIATIVES, SHE BRINGS CREATIVITY AND PURPOSE TO KIWI'S JOURNEY OF CELEBRATING INDIA'S CULINARY DIVERSITY AND EMPOWERING FARMERS.
-                  </p>
-                </div>
+              <div className="hp-cg-ds-desc hp-cg-quote-box">
+                <p className="hp-cg-ds-strong">
+                  A social entrepreneur and purpose-driven leader, Nupur Agarwaal is the Co-Founder &amp; CEO of Kiwi Kisan Window and a founding associate of the Dehradun Drum Circle &amp; Evolve Foundation.
+                </p>
+                <p className="hp-cg-ds-sub">
+                  A Lancaster University alumna in Business Studies, she brings a rare synthesis of strategic vision and community-first leadership — steering Kiwi's mission to honour India's rich culinary heritage while creating meaningful economic pathways for its farming communities.
+                </p>
               </div>
             </div>
             <a href="https://www.linkedin.com/in/nupuragarwal20/" target="_blank" rel="noopener noreferrer" className="hp-cg-speaker-card hp-cg-photo-card">
