@@ -685,7 +685,7 @@ export default function App() {
             
             <div className="hp-cg-deal-tag">
               <span className="hp-cg-deal-tag-dot" />
-              <span>SHARK TANK INDIA HIGHLIGHT</span>
+              <span>SHARK TANK INDIA - SEASON 4</span>
             </div>
 
             <div className="hp-cg-deal-card">
@@ -694,7 +694,7 @@ export default function App() {
               
               <div className="hp-cg-deal-media">
                 <img
-                  src="/deal.png"
+                  src="/sharktank.png"
                   alt="Kiwi Kisan Window ₹2.5 Crore Equity Triumph on Shark Tank India"
                   className="hp-cg-deal-img"
                 />
