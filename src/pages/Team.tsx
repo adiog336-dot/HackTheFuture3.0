@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import aaditya from "../../public/team/aaditya.webp";
@@ -76,6 +77,26 @@ const getInitials = (name: string) => {
 }
 
 export function TeamPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    )
+
+    document.querySelectorAll('.team-card, .team-roster-heading').forEach((el) => {
+      observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <main className="team-page">
       <Header />

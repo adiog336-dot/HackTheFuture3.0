@@ -828,11 +828,11 @@ export default function App() {
             <a href="/tracks">Tracks</a>
             <a href="/prizes">Prizes</a>
             <a href="/timeline">Timeline</a>
-            <a href="/team">Meet the Team</a>
+            
           </div>
           <div className="hp-ft-col">
             <h4>Participate</h4>
-            <a href="/rules">Code of Conduct</a>
+            <a href="/team">Meet the Team</a>
             <a href="/rules">Rules &amp; Guidelines</a>
             <a href="/faq">FAQ</a>
             <a href="/contact">Contact</a>
