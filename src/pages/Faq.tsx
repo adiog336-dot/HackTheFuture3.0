@@ -25,7 +25,7 @@ const categories = [
       { q: 'What is Round 1?', a: 'Round 1 is an online idea/PPT submission round — completely free. Teams submit a presentation covering their problem statement, proposed solution, target users, innovation, technology stack, product vision and market/impact potential. Shortlisted teams advance to the offline finale.' },
       { q: 'When is the Round 1 deadline?', a: 'Registration and PPT submission closes on 13 September 2026 at 11:59 PM IST. Results for shortlisted teams will be announced on 17 September 2026.' },
       { q: 'What documents are needed for registration?', a: 'A valid college/university student ID is required for all team members. Shortlisted teams must also complete payment of ₹500 per participant and submit participant details between 17–20 September 2026.' },
-      { q: 'Can I change team members after registering?', a: 'Team changes are allowed until the confirmation deadline (20 September 2026). After that, the roster is locked. Contact us at hackthefuture@tulas.edu.in for assistance.' },
+      { q: 'Can I change team members after registering?', a: 'Team changes are allowed until the confirmation deadline (20 September 2026). After that, the roster is locked. Contact us at acmtulas@gmail.com for assistance.' },
     ],
   },
   {

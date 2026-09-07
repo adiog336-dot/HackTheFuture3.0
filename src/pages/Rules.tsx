@@ -4,6 +4,7 @@ import { Footer } from '../components/Footer'
 import {
   UserCheck, Users, Upload, Trophy, Shield,
   CheckCircle2, ChevronDown, ArrowUpRight, Info, Home,
+  ListChecks, AlertOctagon, XCircle,
 } from 'lucide-react'
 import mascot from '../../Mascots Variations/Rules.webp'
 import { enter, staggerReveal, reveal, staggerNow } from '../utils/anime-utils'
@@ -12,6 +13,7 @@ import { enter, staggerReveal, reveal, staggerNow } from '../utils/anime-utils'
 const sections = [
   {
     id: 'eligibility', num: '01', title: 'ELIGIBILITY',
+    navTitle: 'Eligibility',
     subtitle: 'Who can participate in HTF 3.0.',
     icon: UserCheck,
     points: [
@@ -25,6 +27,7 @@ const sections = [
   },
   {
     id: 'team', num: '02', title: 'TEAM',
+    navTitle: 'Team',
     subtitle: 'Team size, composition and collaboration rules.',
     icon: Users,
     points: [
@@ -39,6 +42,7 @@ const sections = [
   },
   {
     id: 'submission', num: '03', title: 'SUBMISSION',
+    navTitle: 'Submission',
     subtitle: 'How and what to submit before the deadline.',
     icon: Upload,
     points: [
@@ -52,6 +56,7 @@ const sections = [
   },
   {
     id: 'judging', num: '04', title: 'JUDGING',
+    navTitle: 'Judging',
     subtitle: 'Evaluation criteria and judging process.',
     icon: Trophy,
     points: [
@@ -66,23 +71,84 @@ const sections = [
   },
   {
     id: 'conduct', num: '05', title: 'CODE OF CONDUCT',
-    subtitle: 'Fair play, respect and expected behaviour.',
+    navTitle: 'Code of Conduct',
+    subtitle: 'Official Participant Code of Conduct for Hack The Future 3.0.',
     icon: Shield,
     points: [
-    'Respect all participants, mentors, organizers, judges, volunteers and campus staff.',
-    'Carry your valid college ID card and official participant badge at all times.',
-    'Zero tolerance for plagiarism — all work must be original, built during the hackathon.',
-    'Do not use unfair means (pre-built code without disclosure, copying) during the hackathon.',
-    'Harassment, discrimination or inappropriate behaviour of any kind will not be tolerated.',
-    'Non-vegetarian food and alcohol are strictly NOT allowed inside the campus.',
-    'Smoking, tobacco, cigarettes and vaping are strictly NOT allowed inside the campus.',
-    'Do not consume alcohol, drugs, cigarettes, tobacco or any prohibited substances inside the campus.',
-    'Do not leave the campus without prior permission from organizers.',
-    'Maintain cleanliness and professional discipline inside the campus at all times.',
-    'Do not sleep in restricted areas (labs, corridors) — use designated rest areas only.',
-    'Do not miss submission timelines; late entries will not be entertained.',
-    'Any violation of this code may result in immediate disqualification without prior notice.',
-],
+      ' Our Promise — Hack The Future 3.0 is a respectful, inclusive, and safe space. We welcome participants from all backgrounds and skill levels. Harassment, discrimination, and dishonesty have zero tolerance.',
+      ' Scope — This Code applies to all participants, mentors, judges, volunteers, sponsors, and guests at all official venues, online channels, and social media for the full duration of the hackathon, including night hours.',
+      ' Respect & Inclusion — Treat everyone with courtesy. No harassment, hate speech, intimidation, or personal attacks. Do not disrupt talks, workshops, or other teams. Respect venue staff, security, and organizers’ directions at all times.',
+      ' Academic & Creative Integrity — Submissions must be primarily built during the hackathon window. Disclose pre-existing code, libraries, and AI/code generation tools in your README. No plagiarism or copying without proper attribution. Be prepared to explain code and design choices to judges.',
+      ' Fair Play — Team size: 2–5 members per team (no shadow contributors). Single project submission per team; individuals may not be on multiple teams. No sabotage or interference with other teams. Do not attempt to influence judges outside official sessions.',
+      ' Safety & Wellbeing — Keep aisles clear and manage equipment safely. Strict zero tolerance for alcohol, illegal drugs, weapons, fireworks, or hazardous materials. Any inappropriate language, flirting, or behavior that makes any participant — especially female participants — uncomfortable will result in immediate disqualification. Maintain quiet during late hours.',
+      ' Hardware & Data Use — Only safe, non-destructive hardware (BYOH). No tampering with venue property. Use lawful datasets and never share sensitive personal data without consent. Keep API keys private; do not hardcode secrets in public repos.',
+      ' Privacy, Media & Recording — Participants consent to non-intrusive event photography/videography for documentation and publicity. Always ask consent before photographing individuals or other teams’ screens/whiteboards.',
+      ' Intellectual Property (IP) & Licensing — Your team owns your project IP. Organizers are granted a non-exclusive license to showcase project name, demo video, screenshots, and descriptions for promotion. Comply with third-party asset/OSS licenses with proper attributions in README.',
+      ' Submission Requirements — Submit before the deadline with project name, description, problem statement, README (setup, tech stack, known limitations, AI/code disclosures), repo link, live demo link, and a 2–3 minute demo video. Be ready to demo on your own device.',
+      ' Enforcement — Report issues immediately to the Help Desk, onsite organizers, or via email (acmtulas@gmail.com). Organizers reserve the right to issue warnings, disqualify teams, remove individuals from the venue, or escalate to authorities. All decisions are final.',
+      ' Agreement — By registering, checking in, or submitting a project, you agree to abide by this Code of Conduct, venue policies, and all applicable laws.',
+      ' Judging & Fairness — The judges’ decision is final and binding. Once results are declared, no participant is authorized to question or challenge the outcome. We guarantee zero tolerance for bias or partiality at any stage of evaluation.',
+      ' Refund Policy — All registration fees are non-refundable. No refunds will be issued for any team or participant for any reason, including withdrawal, disqualification, or inability to attend.',
+       'Respect all participants, mentors, organizers, judges, volunteers and campus staff.',
+      'Carry your valid college ID card and official participant badge at all times.',
+      'Zero tolerance for plagiarism — all work must be original, built during the hackathon.',
+      'Do not use unfair means (pre-built code without disclosure, copying) during the hackathon.',
+      'Harassment, discrimination or inappropriate behaviour of any kind will not be tolerated.',
+      'Non-vegetarian food and alcohol are strictly NOT allowed inside the campus.',
+      'Smoking, tobacco, cigarettes and vaping are strictly NOT allowed inside the campus.',
+      'Do not consume alcohol, drugs, cigarettes, tobacco or any prohibited substances inside the campus.',
+      'Do not leave the campus without prior permission from organizers.',
+      'Maintain cleanliness and professional discipline inside the campus at all times.',
+      'Do not sleep in restricted areas (labs, corridors) — use designated rest areas only.',
+      'Do not miss submission timelines; late entries will not be entertained.',
+      'Any violation of this code may result in immediate disqualification without prior notice.'
+    ],
+  },
+  {
+    id: 'dos-donts', num: '06', title: "DO'S & DON'TS",
+    navTitle: "Do's & Don'ts",
+    subtitle: 'Do’s and Don’ts for “Hack The Future” (25–26 September 2026).',
+    icon: ListChecks,
+    dos: [
+      'Carry your valid college ID card at all times.',
+      'Wear your official participant badge inside the venue.',
+      'Be present at the reporting desk on time as per the event schedule.',
+      'Respect the event rules, mentors, judges, volunteers, and fellow participants.',
+      'Keep your workspace neat and organized.',
+      'Ensure laptops, chargers, and required accessories are in proper working condition.',
+      'For hardware problem statements, bring your own hardware (BYOH) and ensure safety while handling equipment.',
+      'Follow the instructions provided by organizers regarding security checks, seating, and submission deadlines.',
+      'Stay within the designated event areas (Computer Centre, rest areas, cafeteria).',
+      'Maintain discipline during night hours and use common areas responsibly.',
+      'Report any technical, medical, or security issues immediately to organizers.',
+      'Utilize the hospitality services (meals/snacks) responsibly without wastage.',
+    ],
+    donts: [
+      'Do not engage in any form of indiscipline, misconduct, or misbehaviour.',
+      'Do not leave the campus or event venue without prior permission from organizers.',
+      'Do not consume alcohol, drugs, cigarettes, or any prohibited substances.',
+      'Do not tamper with institute property, lab equipment, or other participants’ belongings.',
+      'Do not disturb others by creating unnecessary noise or misusing resources.',
+      'Do not use unfair means (plagiarism, copying, pre-built codes without disclosure) during the hackathon.',
+      'Do not sleep in restricted areas (labs, corridors). Use designated rest areas only.',
+      'Do not share your ID card or participant badge with anyone.',
+      'Do not ignore safety instructions while working on hardware/software setups.',
+      'Do not miss submission timelines; late entries will not be entertained.',
+    ],
+    points: [
+      'Carry your valid college ID card at all times.',
+      'Wear your official participant badge inside the venue.',
+      'Be present at the reporting desk on time as per the event schedule.',
+      'Respect the event rules, mentors, judges, volunteers, and fellow participants.',
+      'Keep your workspace neat and organized.',
+      'Ensure laptops, chargers, and required accessories are in proper working condition.',
+      'For hardware problem statements, bring your own hardware (BYOH) and ensure safety while handling equipment.',
+      'Follow the instructions provided by organizers regarding security checks, seating, and submission deadlines.',
+      'Stay within the designated event areas (Computer Centre, rest areas, cafeteria).',
+      'Maintain discipline during night hours and use common areas responsibly.',
+      'Report any technical, medical, or security issues immediately to organizers.',
+      'Utilize the hospitality services (meals/snacks) responsibly without wastage.',
+    ],
   },
 ]
 
@@ -204,14 +270,48 @@ export function RulesPage() {
                 <activeSection.icon size={56} strokeWidth={0.9} />
               </div>
             </div>
-            <ul className="rl-points">
-              {activeSection.points.map((pt, i) => (
-                <li key={i}>
-                  <CheckCircle2 size={17} strokeWidth={2} />
-                  <span>{pt}</span>
-                </li>
-              ))}
-            </ul>
+            {activeSection.dos && activeSection.donts ? (
+              <div className="rl-dos-donts-wrap">
+                <div className="rl-dd-group">
+                  <h3 className="rl-dd-heading rl-dd-heading--do">
+                    <CheckCircle2 size={16} />
+                    <span>DO'S</span>
+                  </h3>
+                  <ul className="rl-points">
+                    {activeSection.dos.map((pt, i) => (
+                      <li key={i}>
+                        <CheckCircle2 size={17} strokeWidth={2} />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rl-dd-group">
+                  <h3 className="rl-dd-heading rl-dd-heading--dont">
+                    <XCircle size={16} className="rl-point-icon--dont" />
+                    <span>DON'TS</span>
+                  </h3>
+                  <ul className="rl-points rl-points--donts">
+                    {activeSection.donts.map((pt, i) => (
+                      <li key={i}>
+                        <XCircle size={17} strokeWidth={2} className="rl-point-icon--dont" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <ul className="rl-points">
+                {activeSection.points.map((pt, i) => (
+                  <li key={i}>
+                    <CheckCircle2 size={17} strokeWidth={2} />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           {/* Collapsed accordion for remaining sections */}
@@ -236,14 +336,14 @@ export function RulesPage() {
         <aside className="rl-sidebar">
           <div className="rl-quicknav">
             <p className="rl-qn-label">QUICK NAVIGATION</p>
-            {sections.map(({ id, num, title }) => (
+            {sections.map(({ id, num, title, navTitle }) => (
               <button
                 key={id}
                 className={`rl-qn-item${active === id ? ' rl-qn-item--active' : ''}`}
                 onClick={() => setActive(id)}
               >
                 <span className="rl-qn-num">{num}</span>
-                <span>{title.replace('CODE OF ', 'Code of ')
+                <span>{navTitle || title.replace('CODE OF ', 'Code of ')
                   .replace('ELIGIBILITY', 'Eligibility')
                   .replace('TEAM', 'Team')
                   .replace('SUBMISSION', 'Submission')
