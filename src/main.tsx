@@ -12,6 +12,7 @@ import { PrizesPage } from './pages/Prizes'
 import { TimelinePage } from './pages/Timeline'
 import { FaqPage } from './pages/Faq'
 import { ContactPage } from './pages/Contact'
+import { TeamPage } from './pages/Team'
 import './styles/global.css'
 import './styles/homepage-sections.css'
 import './styles/journey-map.css'
@@ -23,6 +24,7 @@ import './styles/prizes.css'
 import './styles/timeline.css'
 import './styles/faq.css'
 import './styles/contact.css'
+import './styles/team.css'
 import './styles/home-mobile.css'
 
 import { ScrollToTop } from './components/ScrollToTop'
@@ -44,6 +46,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/team" element={<TeamPage />} />
 
           {['judges', 'mentors', 'sponsors'].map(page => (
             <Route key={page} path={`/${page}`} element={<EventPage page={page} />} />

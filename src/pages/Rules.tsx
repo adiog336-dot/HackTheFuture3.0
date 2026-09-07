@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import {
@@ -6,6 +6,7 @@ import {
   CheckCircle2, ChevronDown, ArrowUpRight, Info, Home,
 } from 'lucide-react'
 import mascot from '../../Mascots Variations/Rules.webp'
+import { enter, staggerReveal, reveal, staggerNow } from '../utils/anime-utils'
 
 /* ── Rules data ── */
 const sections = [
@@ -68,29 +69,75 @@ const sections = [
     subtitle: 'Fair play, respect and expected behaviour.',
     icon: Shield,
     points: [
-      'Respect all participants, mentors, organizers, judges, volunteers and venue staff.',
-      'Carry your valid college ID card and official participant badge at all times.',
-      'Zero tolerance for plagiarism — all work must be original, built during the hackathon.',
-      'Do not use unfair means (pre-built code without disclosure, copying) during the hackathon.',
-      'Harassment, discrimination or inappropriate behaviour of any kind will not be tolerated.',
-      'Non-vegetarian food and alcohol are strictly NOT allowed inside the venue.',
-      'Do not consume alcohol, drugs, cigarettes or any prohibited substances at or near the venue.',
-      'Do not leave the campus or venue without prior permission from organizers.',
-      'Maintain cleanliness and professional discipline at the venue at all times.',
-      'Do not sleep in restricted areas (labs, corridors) — use designated rest areas only.',
-      'Do not miss submission timelines; late entries will not be entertained.',
-      'Any violation of this code may result in immediate disqualification without prior notice.',
-    ],
+    'Respect all participants, mentors, organizers, judges, volunteers and campus staff.',
+    'Carry your valid college ID card and official participant badge at all times.',
+    'Zero tolerance for plagiarism — all work must be original, built during the hackathon.',
+    'Do not use unfair means (pre-built code without disclosure, copying) during the hackathon.',
+    'Harassment, discrimination or inappropriate behaviour of any kind will not be tolerated.',
+    'Non-vegetarian food and alcohol are strictly NOT allowed inside the campus.',
+    'Smoking, tobacco, cigarettes and vaping are strictly NOT allowed inside the campus.',
+    'Do not consume alcohol, drugs, cigarettes, tobacco or any prohibited substances inside the campus.',
+    'Do not leave the campus without prior permission from organizers.',
+    'Maintain cleanliness and professional discipline inside the campus at all times.',
+    'Do not sleep in restricted areas (labs, corridors) — use designated rest areas only.',
+    'Do not miss submission timelines; late entries will not be entertained.',
+    'Any violation of this code may result in immediate disqualification without prior notice.',
+],
   },
 ]
 
 export function RulesPage() {
-  const [active, setActive] = useState('eligibility')
+  const pageRef = useRef<HTMLElement>(null)
+  const isFirstRender = useRef(true)
+  const [active, setActive] = useState(
+  new URLSearchParams(window.location.search).get('tab') || 'eligibility'
+)
 
   const activeSection = sections.find(s => s.id === active)!
 
+  // Mount animations
+  useEffect(() => {
+    const el = pageRef.current
+    if (!el) return
+    const obs: IntersectionObserver[] = []
+    const push = (o: IntersectionObserver | null) => { if (o) obs.push(o) }
+
+    // Hero entrance
+    enter(Array.from(el.querySelectorAll('.rl-hero-copy > *')))
+    enter([el.querySelector('.rl-hero-visual')!].filter(Boolean), { y: 0, x: 50, duration: 900, delay: 240 })
+
+    // Tabs stagger in
+    push(staggerReveal(
+      Array.from(el.querySelectorAll('.rl-tab')),
+      { y: 20, stagger: 55, threshold: 0.05 }
+    ))
+
+    // Accordion list
+    push(staggerReveal(
+      Array.from(el.querySelectorAll('.rl-accordion')),
+      { y: 28, stagger: 70 }
+    ))
+
+    // Sidebar slides in from right
+    push(reveal(el.querySelector('.rl-sidebar') as Element, { x: 44, y: 0, duration: 820, threshold: 0.1 }))
+
+    // Warning bar
+    push(reveal(el.querySelector('.rl-warning') as Element, { y: 28 }))
+
+    return () => obs.forEach(o => o.disconnect())
+  }, [])
+
+  // Animate points list on tab change
+  useEffect(() => {
+    if (isFirstRender.current) { isFirstRender.current = false; return }
+    const el = pageRef.current
+    if (!el) return
+    const points = Array.from(el.querySelectorAll('.rl-points li'))
+    staggerNow(points, { y: 18, stagger: 45 })
+  }, [active])
+
   return (
-    <main className="rl-page">
+    <main className="rl-page" ref={pageRef}>
       <Header />
 
       {/* Breadcrumb */}
