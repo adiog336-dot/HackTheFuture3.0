@@ -652,7 +652,7 @@ export default function App() {
                   <p className='hp-cg-ds-strong'>
                     <span>Associated with Dehradun Drum Circle &amp; Evolve Foundation</span>
                   </p>
-                  <p className="hp-cg-quote-text">
+                  <p className="hp-cg-ds-sub">
                     AN ENTREPRENEUR AND SOCIAL-IMPACT PROFESSIONAL, NUPUR HAS BEEN INSTRUMENTAL IN SHAPING KIWI'S VISION AND GROWTH. WITH A BACKGROUND IN BUSINESS STUDIES FROM LANCASTER UNIVERSITY AND EXPERIENCE WITH COMMUNITY-FOCUSED INITIATIVES, SHE BRINGS CREATIVITY AND PURPOSE TO KIWI'S JOURNEY OF CELEBRATING INDIA'S CULINARY DIVERSITY AND EMPOWERING FARMERS.
                   </p>
                 </div>
