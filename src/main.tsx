@@ -28,9 +28,11 @@ import './styles/team.css'
 import './styles/home-mobile.css'
 
 import { ScrollToTop } from './components/ScrollToTop'
+import { Preloader } from './components/Preloader'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <Preloader />
     <BrowserRouter>
       <ScrollToTop />
       <ReactLenis root options={{ lerp: 0.09, duration: 1.25, smoothWheel: true, wheelMultiplier: 1, touchMultiplier: 1.6, syncTouch: true }}>
