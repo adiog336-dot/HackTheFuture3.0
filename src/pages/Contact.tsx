@@ -7,7 +7,7 @@ import mascot from '../../Mascots Variations/Contact Us.webp'
 import { enter, staggerReveal } from '../utils/anime-utils'
 
 const contactInfo = [
-  { icon: Mail, label: 'EMAIL US', value: 'Hackathon@tulas.edu.in', link: 'mailto:Hackathon@tulas.edu.in' },
+  { icon: Mail, label: 'EMAIL US', value: 'acmtulas@gmail.com', link: 'mailto:acmtulas@gmail.com' },
   { icon: Phone, label: 'CALL US', value: '+91 7983536078', link: 'tel:+917983536078' },
   { icon: MapPin, label: 'LOCATION', value: 'Tulas University, Dehradun, Uttarakhand', link: 'https://maps.google.com/?q=Tulas+University+Dehradun' },
 
@@ -51,7 +51,7 @@ export function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const targetEmail = 'hackthefuture@tulas.edu.in'
+    const targetEmail = 'acmtulas@gmail.com'
     const mailSubject = encodeURIComponent(`[HTF 3.0] ${form.subject} - ${form.name}`)
     const mailBody = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`)
 
@@ -199,9 +199,9 @@ export function ContactPage() {
           {/* Quick contact */}
           <div className="ct-quick">
             <p className="ct-section-tag">QUICK CONTACT</p>
-            <a href="mailto:hackthefuture@tulas.edu.in" className="ct-quick-email">
+            <a href="mailto:acmtulas@gmail.com" className="ct-quick-email">
               <Mail size={16} />
-              Hackathon@tulas.edu.in
+              acmtulas@gmail.com
             </a>
             <p className="ct-quick-note">For urgent queries, reach out on WhatsApp — we're most active there!</p>
           </div>

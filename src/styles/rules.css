@@ -223,6 +223,48 @@
   color: #3e3848;
 }
 .rl-points li svg { color: var(--purple); flex-shrink: 0; margin-top: 2px; }
+.rl-points--donts li svg,
+.rl-point-icon--dont { color: #ef4444 !important; }
+
+/* Do's & Don'ts Layout */
+.rl-dos-donts-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.rl-dd-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rl-dd-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.rl-dd-heading--do {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.rl-dd-heading--dont {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
 
 /* ── Accordion items ── */
 .rl-accordion {
