@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import {
@@ -358,9 +359,9 @@ export function RulesPage() {
             <div className="rl-doubt-icon">?</div>
             <strong>Have a doubt?</strong>
             <p>Check our FAQ section or reach out to us.</p>
-            <a href="/faq" className="rl-doubt-btn">
+            <Link to="/faq" className="rl-doubt-btn">
               VIEW FAQ <ArrowUpRight size={14} />
-            </a>
+            </Link>
           </div>
         </aside>
       </div>

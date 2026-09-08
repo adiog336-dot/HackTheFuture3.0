@@ -144,9 +144,9 @@ export function TracksPage() {
             <p className="tr-cta-hint">You can switch your track until the hacking begins.</p>
           </div>
         </div>
-        <a href="/contact" className="tr-cta-btn">
+        <Link to="/contact" className="tr-cta-btn">
           REGISTER NOW <ArrowRight size={15} />
-        </a>
+        </Link>
         <div className="tr-cta-dots" aria-hidden="true" />
       </div>
 

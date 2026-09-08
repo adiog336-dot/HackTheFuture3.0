@@ -1,7 +1,9 @@
 import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 import { MatrixRain } from './components/MatrixRain'
 import { JourneyMap } from './components/JourneyMap'
 import { HeroImageStack } from './components/HeroImageStack'
+import { Link } from 'react-router-dom'
 import { event } from './data/event'
 import mascot from '../Website Mascot.webp'
 import navLogo from '../NavBar Logo.webp'
@@ -381,7 +383,7 @@ export default function App() {
         </div>
         <HeroImageStack />
         <div className="about-bottom-row">
-          <a className="button button-outline about-know-more" href="/about">Know more about <strong>→</strong></a>
+          <Link className="button button-outline about-know-more" to="/about">Know more about <strong>→</strong></Link>
           <p className="about-pipeline">
             PROBLEM → IDEA → PROJECT → PROTOTYPE → <span className="purple-text">PRODUCT → PITCH</span>
           </p>
@@ -399,7 +401,7 @@ export default function App() {
           <h2 className="hp-pz-pool-label">TOTAL<br />PRIZE<br />POOL</h2>
           <div className="hp-pz-pool-num"><AnimatedCounter to={500000} prefix="₹" /><span>+</span></div>
           <p className="hp-pz-tagline">Compete. Win. Shine.</p>
-          <a className="hp-pz-btn" href="/prizes">View All Prizes <strong>→</strong></a>
+          <Link className="hp-pz-btn" to="/prizes">View All Prizes <strong>→</strong></Link>
         </div>
         <div className="hp-pz-center">
           <img src={prizesMascot} alt="Prize Mascot" className="hp-pz-mascot" />
@@ -469,10 +471,10 @@ export default function App() {
           {/* Right side: Stacked cards */}
           <div className="hp-tr-right">
             {trackData.map(({ n, t, d, icon: Icon }, index) => (
-              <a
+              <Link
                 key={n}
                 className="hp-tr-card hp-tr-stacked-card"
-                href="/tracks"
+                to="/tracks"
                 style={{ '--card-index': index } as React.CSSProperties}
               >
                 <div className="hp-tr-card-icon"><Icon size={36} /></div>
@@ -482,7 +484,7 @@ export default function App() {
                   <p className="hp-tr-card-desc">{d}</p>
                   <span className="hp-tr-card-arrow">→</span>
                 </div>
-              </a>
+              </Link>
             ))}
             {/* Scroll tail for the sticky deck. A sticky box unsticks when the
                 *content* box of its container reaches it, so the container's
@@ -501,7 +503,7 @@ export default function App() {
             <b>One Hackathon. Infinite Possibilities.</b>
             <span>Choose your track and start building the future.</span>
           </div>
-          <a className="hp-tr-cta-btn" href={'/tracks'}>LET'S BUILD →</a>
+          <Link className="hp-tr-cta-btn" to="/tracks">LET'S BUILD →</Link>
         </div>
       </section>
 
@@ -541,9 +543,9 @@ export default function App() {
               <h2 className="hp-spon-heading">BACK THE<br /><span>BUILDERS.</span></h2>
               <p className="hp-spon-tagline">500+ innovators. National reach. Your brand at India's next big hackathon.</p>
             </div>
-            <a className="hp-spon-cta" href="/contact">
+            <Link className="hp-spon-cta" to="/contact">
               Become a Sponsor <strong>→</strong>
-            </a>
+            </Link>
           </div>
 
           {/* Reach stats */}
@@ -740,9 +742,9 @@ export default function App() {
                   <span>REGISTER ON UNSTOP</span>
                   <ArrowRight size={17} />
                 </a>
-                <a className="hp-pfc-l-btn-secondary" href="/rules">
+                <Link className="hp-pfc-l-btn-secondary" to="/rules">
                   VIEW GUIDELINES <ChevronRight size={16} />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -823,46 +825,7 @@ export default function App() {
       </section>
 
       {/* ═══════════ FOOTER ═══════════ */}
-      <footer id="contact" className="hp-ft">
-        <div className="hp-ft-grid">
-          <div className="hp-ft-brand">
-            <div className="hp-ft-logo">
-              <img src={navLogo} alt="Hack the Future 3.0" />
-            </div>
-            <p className="hp-ft-desc">
-              A national-level hackathon by Tulas ACM Student Chapter,<br className="hp-ft-br" />
-              Tulas University, Dehradun.
-            </p>
-            <p className="hp-ft-theme">
-              <strong>Theme:</strong> Project to Product.<br />
-              <span className="hp-ft-motto">Build. Validate. Pitch.</span>
-            </p>
-            <div className="hp-ft-social">
-              <a href="https://www.instagram.com/tulashackathon?igsi=MXQ2Y2Q5eXdwYmp6cw==" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon /></a>
-              <a href="https://chat.whatsapp.com/Ichzy6cHy6pIOCCqxa8E3f" target="_blank" rel="noreferrer" aria-label="WhatsApp"><WhatsappIcon /></a>
-            </div>
-          </div>
-          <div className="hp-ft-col">
-            <h4>Quick Links</h4>
-            <a href="/about">About</a>
-            <a href="/tracks">Tracks</a>
-            <a href="/prizes">Prizes</a>
-            <a href="/timeline">Timeline</a>
-            
-          </div>
-          <div className="hp-ft-col">
-            <h4>Participate</h4>
-            <a href="/rules?tab=conduct">Code of Conduct</a>
-            <a href="/rules">Rules &amp; Guidelines</a>
-            <a href="/faq">FAQ</a>
-            <a href="/contact">Contact</a>
-          </div>
-        </div>
-        <div className="hp-ft-bottom">
-          <span>&copy; 2026 Hack The Future 3.0 &nbsp;|&nbsp; Tulas ACM Student Chapter &middot; Tulas University, Dehradun. All rights reserved.</span>
-          <span className="hp-ft-heart">Built with passion for innovators <Heart size={14} /></span>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }
