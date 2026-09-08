@@ -91,6 +91,8 @@
   max-width: 520px;
   margin: 0 0 22px;
   text-wrap: pretty;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .ab-hero-copy p strong {

@@ -1472,6 +1472,7 @@
   margin: 0 0 28px;
   text-wrap: pretty;
   text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-desc strong {
