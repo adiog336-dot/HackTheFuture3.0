@@ -6,9 +6,17 @@ import '../styles/preloader.css'
 export const Preloader: React.FC = () => {
   const [progress, setProgress] = useState(0)
   const [isHiding, setIsHiding] = useState(false)
-  const [isMounted, setIsMounted] = useState(true)
+  const [isMounted, setIsMounted] = useState(() => {
+    try {
+      return !sessionStorage.getItem('htf_preloader_shown')
+    } catch {
+      return true
+    }
+  })
 
   useEffect(() => {
+    if (!isMounted) return
+
     // Lock scroll during preloader
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -24,6 +32,11 @@ export const Preloader: React.FC = () => {
 
       if (rawProgress >= 100) {
         clearInterval(interval)
+        try {
+          sessionStorage.setItem('htf_preloader_shown', 'true')
+        } catch {
+          // safe ignore
+        }
         // Trigger fadeout
         setTimeout(() => {
           setIsHiding(true)
@@ -40,7 +53,7 @@ export const Preloader: React.FC = () => {
       clearInterval(interval)
       document.body.style.overflow = prevOverflow || ''
     }
-  }, [])
+  }, [isMounted])
 
   if (!isMounted) return null
 
