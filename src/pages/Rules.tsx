@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import {
@@ -60,10 +61,12 @@ const sections = [
     subtitle: 'Evaluation criteria and judging process.',
     icon: Trophy,
     points: [
-      'Innovation & Creativity — 25% of the total score.',
-      'Technical Complexity & Implementation Quality — 25%.',
-      'Real-world Impact & Feasibility of the solution — 25%.',
-      'Presentation, Communication & Demo clarity — 25%.',
+      'Innovation & Creativity — 20% of the total score.',
+      'Problem Understanding — 15% of the total score.',
+      'Technical Implementation — 25% of the total score.',
+      'Practical Impact — 20% of the total score.',
+      'UI/UX & Presentation — 10% of the total score.',
+      'Scalability & Future Scope — 10% of the total score.',
       'Evaluation happens in two rounds: preliminary shortlisting and final judging.',
       'All judges\' decisions are final, binding and cannot be appealed.',
       'Intellectual property of submitted projects remains with the participants.',
@@ -356,9 +359,9 @@ export function RulesPage() {
             <div className="rl-doubt-icon">?</div>
             <strong>Have a doubt?</strong>
             <p>Check our FAQ section or reach out to us.</p>
-            <a href="/faq" className="rl-doubt-btn">
+            <Link to="/faq" className="rl-doubt-btn">
               VIEW FAQ <ArrowUpRight size={14} />
-            </a>
+            </Link>
           </div>
         </aside>
       </div>

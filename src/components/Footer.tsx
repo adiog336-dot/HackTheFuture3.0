@@ -1,4 +1,5 @@
 import { Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { event } from '../data/event'
 import navLogo from '../../NavBar Logo.webp'
 
@@ -9,7 +10,7 @@ const WhatsappIcon = () => <svg width={s} height={s} viewBox="0 0 24 24" fill="c
 
 export function Footer() {
   return (
-    <footer className="hp-ft">
+    <footer id="contact" className="hp-ft">
       <div className="hp-ft-grid">
         <div className="hp-ft-brand">
           <div className="hp-ft-logo">
@@ -31,18 +32,18 @@ export function Footer() {
 
         <div className="hp-ft-col">
           <h4>Quick Links</h4>
-          <a href="/about">About</a>
-          <a href="/tracks">Tracks</a>
-          <a href="/prizes">Prizes</a>
-          <a href="/timeline">Timeline</a>
+          <Link to="/about">About</Link>
+          <Link to="/tracks">Tracks</Link>
+          <Link to="/prizes">Prizes</Link>
+          <Link to="/timeline">Timeline</Link>
         </div>
 
         <div className="hp-ft-col">
           <h4>Participate</h4>
-          <a href="/team">Meet the Team</a>
-          <a href="/rules">Rules &amp; Guidelines</a>
-          <a href="/faq">FAQ</a>
-          <a href="/contact">Contact</a>
+          <Link to="/rules?tab=conduct">Code of Conduct</Link>
+          <Link to="/rules">Rules &amp; Guidelines</Link>
+          <Link to="/faq">FAQ</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
       </div>

@@ -6,9 +6,17 @@ import '../styles/preloader.css'
 export const Preloader: React.FC = () => {
   const [progress, setProgress] = useState(0)
   const [isHiding, setIsHiding] = useState(false)
-  const [isMounted, setIsMounted] = useState(true)
+  const [isMounted, setIsMounted] = useState(() => {
+    try {
+      return !sessionStorage.getItem('htf_preloader_shown')
+    } catch {
+      return true
+    }
+  })
 
   useEffect(() => {
+    if (!isMounted) return
+
     // Lock scroll during preloader
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -24,6 +32,11 @@ export const Preloader: React.FC = () => {
 
       if (rawProgress >= 100) {
         clearInterval(interval)
+        try {
+          sessionStorage.setItem('htf_preloader_shown', 'true')
+        } catch {
+          // safe ignore
+        }
         // Trigger fadeout
         setTimeout(() => {
           setIsHiding(true)
@@ -40,7 +53,7 @@ export const Preloader: React.FC = () => {
       clearInterval(interval)
       document.body.style.overflow = prevOverflow || ''
     }
-  }, [])
+  }, [isMounted])
 
   if (!isMounted) return null
 
@@ -72,6 +85,20 @@ export const Preloader: React.FC = () => {
 
       {/* Center Content */}
       <div className="htf-preloader-content">
+        {/* Tula's University Official Badge */}
+        <div className="htf-preloader-univ-badge">
+          <img
+            src={tulasLogo}
+            alt="Tula's University"
+            className="htf-preloader-univ-logo"
+          />
+        </div>
+
+        {/* Presenter Subtitle */}
+        <div className="htf-preloader-presenter">
+          <span>TULAS ACM STUDENT CHAPTER PRESENTS</span>
+        </div>
+
         {/* Hologram Rings & HTF Logo */}
         <div className="htf-preloader-logo-wrap">
           <div className="htf-preloader-ring-1" />
@@ -83,6 +110,32 @@ export const Preloader: React.FC = () => {
               className="htf-preloader-logo-img"
             />
           </div>
+        </div>
+
+        {/* Title Tagline */}
+        <div className="htf-preloader-title">
+          <span className="htf-preloader-tag">//</span>
+          HACK THE FUTURE 3.0
+          <span className="htf-preloader-tag">//</span>
+        </div>
+
+        {/* Dynamic Percentage Counter */}
+        <div className="htf-preloader-percent">
+          {progress}%
+        </div>
+
+        {/* Glowing Progress Bar */}
+        <div className="htf-preloader-bar-wrap">
+          <div
+            className="htf-preloader-bar-fill"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        {/* Status ticker readout */}
+        <div className="htf-preloader-status">
+          <span className="htf-status-beacon" />
+          <span>{statusText}</span>
         </div>
       </div>
     </div>
