@@ -725,7 +725,7 @@ export default function App() {
               <span className="hp-pfc-l-dot" />
               ROUND 1 SUBMISSION IS 100% FREE
             </span>
-            <span className="hp-pfc-l-meta">DEADLINE: 17 SEPT 2026 · 11:59 PM IST</span>
+            <span className="hp-pfc-l-meta">DEADLINE: 16 SEPT 2026 · 11:59 PM IST</span>
           </div>
 
           <div className="hp-pfc-l-body">

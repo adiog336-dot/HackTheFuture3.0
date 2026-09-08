@@ -6,7 +6,7 @@ import {
   Lightbulb, Code2, Target, Rocket, Heart,
   Users, Trophy, Clock, Star, Sparkles,
   Maximize2, ChevronLeft, ChevronRight, X,
-  Award, Eye, Calendar, MapPin
+  Award, Eye, Calendar, MapPin, UserCheck
 } from 'lucide-react'
 import mascotAbout from '../../Mascots Variations/About.webp'
 import { enter, staggerReveal, reveal } from '../utils/anime-utils'
@@ -116,7 +116,7 @@ const pastStats = [
   { icon: Users, value: '500+', label: 'HTF 2.0 HACKERS', desc: 'Participants from 50+ colleges' },
   { icon: Trophy, value: '₹2.4L+', label: 'PRIZES DISTRIBUTED', desc: 'Cash awards, swags & grants' },
   { icon: Clock, value: '30 HRS', label: 'NON-STOP HACKING', desc: 'Overnight sprint of innovation' },
-  { icon: Sparkles, value: '60+', label: 'TEAMS SHORTLISTED', desc: 'Viable prototypes created' },
+  { icon: UserCheck, value: '60+', label: 'TEAMS SHORTLISTED', desc: 'Viable prototypes created' },
 ]
 
 const filterTabs = [
@@ -329,8 +329,7 @@ export function AboutPage() {
             <div className="ab-flashback-eyebrow-row">
               <span className="eyebrow">03 / Previous Edition Legacy</span>
               <span className="ab-badge-past">
-                <Sparkles size={13} className="ab-badge-icon" />
-                FLASHBACK: HTF 2.0
+                 FLASHBACK: HTF 2.0
               </span>
             </div>
 
