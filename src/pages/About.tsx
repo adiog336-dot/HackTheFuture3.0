@@ -242,20 +242,21 @@ export function AboutPage() {
             THE <span className="ab-purple">FUTURE.</span>
           </h1>
           <div className="ab-h1-line" />
-          <p>
-            Hack the Future 3.0 is a national-level hackathon organized by
-            <strong> Tulas ACM Student Chapter</strong>, Tulas University, Dehradun.
-            This edition's theme is <em>Project to Product</em> — encouraging students to
+          <p className="ab-desc">
+            Hack the Future 3.0 is a national-level hackathon organized by{' '}
+            <strong>Tulas ACM Student Chapter</strong>, Tulas University, Dehradun.
+            This edition's theme is <strong>"Project to Product"</strong> — encouraging students to
             move beyond academic projects and develop solutions with the potential to become
             meaningful, scalable and user-focused products.
           </p>
-          <p className="ab-hero-closing">
-            PROBLEM → IDEA → PROJECT → PROTOTYPE →<br />
-            <em>PRODUCT → PITCH</em>
-          </p>
-          <a href={event.registrationUrl} className="button button-outline ab-cta">
-            Register Now <strong>→</strong>
-          </a>
+          <div className="ab-pipeline-badge">
+            PROBLEM → IDEA → PROJECT → PROTOTYPE → <span className="purple-text">PRODUCT → PITCH</span>
+          </div>
+          <div className="ab-actions">
+            <a href={event.registrationUrl} className="button button-outline ab-cta" target="_blank" rel="noopener noreferrer">
+              Register Now <strong>→</strong>
+            </a>
+          </div>
         </div>
 
         {/* Right: mascot visual */}

@@ -372,21 +372,25 @@ export default function App() {
 
       {/* ═══════════ ABOUT ═══════════ */}
       <section className="section about" id="about">
-        <div>
+        <div className="about-text-col">
           <p className="eyebrow">01 / About</p>
           <h2>WHAT IS<br /><span>HACK</span> THE FUTURE?</h2>
-          <p>
+          <p className="about-desc">
             Hack the Future 3.0 is a national-level hackathon organized by Tulas ACM Student Chapter, Tulas University, Dehradun.
             This edition's theme is <strong>"Project to Product"</strong> — challenging students to move beyond academic projects
             and build solutions with real product potential, entrepreneurship mindset and scalable impact.
           </p>
+          <div className="about-actions">
+            <Link className="button button-outline about-know-more" to="/about">Know More About HTF <strong>→</strong></Link>
+          </div>
         </div>
-        <HeroImageStack />
-        <div className="about-bottom-row">
-          <Link className="button button-outline about-know-more" to="/about">Know more about <strong>→</strong></Link>
-          <p className="about-pipeline">
-            PROBLEM → IDEA → PROJECT → PROTOTYPE → <span className="purple-text">PRODUCT → PITCH</span>
-          </p>
+        <div className="about-media-col">
+          <HeroImageStack />
+          <div className="about-pipeline-wrap">
+            <p className="about-pipeline">
+              PROBLEM → IDEA → PROJECT → PROTOTYPE → <span className="purple-text">PRODUCT → PITCH</span>
+            </p>
+          </div>
         </div>
       </section>
 
