@@ -11,9 +11,9 @@
 
 /* ── Breadcrumb ── */
 .tl-breadcrumb {
-  padding-top: 110px;
+  padding-top:110px;
   padding-bottom: 20px;
-  padding-left: 10px;
+  padding-left:10px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -24,14 +24,8 @@
   background: #ffffff;
   border-bottom: 1px solid #ede8f2;
 }
-
-.tl-bc-sep {
-  color: #ccc4d8;
-}
-
-.tl-bc-active {
-  color: var(--purple);
-}
+.tl-bc-sep { color: #ccc4d8; }
+.tl-bc-active { color: var(--purple); }
 
 /* ── Hero ── */
 .tl-hero {
@@ -52,7 +46,7 @@
   font: 700 260px / 1 'Space Grotesk', sans-serif;
   letter-spacing: -18px;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(139, 54, 247, 0.07);
+  -webkit-text-stroke: 1px rgba(139,54,247,0.07);
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -77,14 +71,10 @@
   text-transform: uppercase;
   color: #0e0a1c;
 }
-
-.tl-purple {
-  color: var(--purple);
-}
+.tl-purple { color: var(--purple); }
 
 .tl-h1-line {
-  width: 44px;
-  height: 3px;
+  width: 44px; height: 3px;
   background: var(--purple);
   border-radius: 2px;
   margin: 20px 0 22px;
@@ -105,16 +95,14 @@
   align-items: center;
   z-index: 2;
 }
-
 .tl-hero-mascot {
   height: 300px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 16px 32px rgba(139, 54, 247, 0.18));
+  filter: drop-shadow(0 16px 32px rgba(139,54,247,0.18));
   position: relative;
   z-index: 2;
 }
-
 .tl-hero-path {
   position: absolute;
   bottom: -20px;
@@ -133,48 +121,44 @@
 /* Day group */
 .tl-day-group {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 170px 1fr;
   gap: 0;
   border-top: 1px solid #ede8f2;
 }
-
-.tl-day-group:last-child {
-  border-bottom: 1px solid #ede8f2;
-}
+.tl-day-group:last-child { border-bottom: 1px solid #ede8f2; }
 
 /* Date block */
 .tl-date {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 36px 20px 36px clamp(24px, 8vw, 130px);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+  padding: 31px 10px 31px 14px;
   border-right: 2px solid #ede8f2;
   position: sticky;
   top: 72px;
   align-self: start;
   background: #faf8fd;
   z-index: 10;
+  white-space: nowrap;
 }
-
 .tl-day-num {
-  font: 700 52px / 1 'Space Grotesk', sans-serif;
+  font: 700 26px / 1 'Space Grotesk', sans-serif;
   color: #0e0a1c;
-  letter-spacing: -3px;
+  letter-spacing: -1px;
 }
-
 .tl-month {
-  font: 700 14px Manrope;
+  font: 700 11px Manrope;
   color: var(--purple);
-  letter-spacing: 1px;
-  margin-top: 2px;
+  letter-spacing: 0.5px;
 }
-
 .tl-weekday {
-  font: 600 9px 'DM Mono', monospace;
+  font: 600 8px 'DM Mono', monospace;
   color: #b0a8be;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-top: 6px;
 }
 
 /* Events column */
@@ -190,8 +174,7 @@
   content: '';
   position: absolute;
   left: 35px;
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   width: 1px;
   background: #ddd5e8;
   z-index: 0;
@@ -209,46 +192,31 @@
   z-index: 1;
   transition: background .2s;
 }
-
-.tl-event:last-child {
-  border-bottom: none;
-}
-
-.tl-event:hover {
-  background: #faf7ff;
-}
-
-.tl-event--featured {
-  background: #f5f0ff;
-}
-
-.tl-event--featured:hover {
-  background: #ede5ff;
-}
+.tl-event:last-child { border-bottom: none; }
+.tl-event:hover { background: #faf7ff; }
+.tl-event--featured { background: #f5f0ff; }
+.tl-event--featured:hover { background: #ede5ff; }
 
 /* Spine dot */
 .tl-spine-dot {
-  width: 10px;
-  height: 10px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   border: 2px solid var(--purple);
   background: #ffffff;
   flex-shrink: 0;
   position: relative;
   z-index: 2;
-  margin-left: 19px;
+  margin-left: 6px;
   transition: background .2s;
 }
-
 .tl-event--featured .tl-spine-dot {
   background: var(--purple);
-  box-shadow: 0 0 0 4px rgba(139, 54, 247, 0.15);
+  box-shadow: 0 0 0 4px rgba(139,54,247,0.15);
 }
 
 /* Icon circle */
 .tl-event-icon {
-  width: 48px;
-  height: 48px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, #f0eaff, #e8deff);
   display: grid;
@@ -257,18 +225,14 @@
   flex-shrink: 0;
   transition: background .2s;
 }
-
 .tl-event--featured .tl-event-icon {
   background: var(--purple);
   color: white;
-  box-shadow: 0 4px 16px rgba(139, 54, 247, 0.3);
+  box-shadow: 0 4px 16px rgba(139,54,247,0.3);
 }
 
 /* Content */
-.tl-event-content {
-  min-width: 0;
-}
-
+.tl-event-content { min-width: 0; }
 .tl-event-content strong {
   display: block;
   font: 700 13.5px Manrope;
@@ -276,11 +240,7 @@
   color: #0e0a1c;
   margin-bottom: 4px;
 }
-
-.tl-event--featured .tl-event-content strong {
-  color: var(--purple);
-}
-
+.tl-event--featured .tl-event-content strong { color: var(--purple); }
 .tl-event-content p {
   font-size: 12.5px;
   color: #9086a0;
@@ -309,21 +269,17 @@
 }
 
 .tl-cta-clock {
-  width: 64px;
-  height: 64px;
+  width: 64px; height: 64px;
   border-radius: 50%;
-  border: 1.5px solid rgba(139, 54, 247, 0.5);
-  background: rgba(139, 54, 247, 0.1);
+  border: 1.5px solid rgba(139,54,247,0.5);
+  background: rgba(139,54,247,0.1);
   display: grid;
   place-items: center;
   color: var(--purple);
   flex-shrink: 0;
 }
 
-.tl-cta-copy {
-  flex: 1;
-}
-
+.tl-cta-copy { flex: 1; }
 .tl-cta-head {
   font: 800 clamp(18px, 2.5vw, 28px) 'Space Grotesk', sans-serif;
   color: white;
@@ -331,11 +287,7 @@
   margin: 0 0 8px;
   text-transform: uppercase;
 }
-
-.tl-cta-head span {
-  color: var(--purple);
-}
-
+.tl-cta-head span { color: var(--purple); }
 .tl-cta-sub {
   font-size: 13.5px;
   color: #9086a0;
@@ -352,13 +304,12 @@
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: white;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(255,255,255,0.25);
   padding: 14px 22px;
   text-decoration: none;
   transition: background .25s, color .25s, border-color .25s;
   white-space: nowrap;
 }
-
 .tl-cta-btn:hover {
   background: #ffffff;
   color: var(--purple);
@@ -369,143 +320,90 @@
 .tl-cta-dots {
   position: absolute;
   right: clamp(24px, 8vw, 80px);
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   width: 120px;
-  background-image: radial-gradient(rgba(139, 54, 247, 0.4) 1.2px, transparent 1.5px);
+  background-image: radial-gradient(rgba(139,54,247,0.4) 1.2px, transparent 1.5px);
   background-size: 12px 12px;
   pointer-events: none;
 }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .tl-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .tl-hero-visual {
-    margin-top: 20px;
-    justify-content: flex-start;
-  }
-
-  .tl-hero-mascot {
-    height: 240px;
-  }
-
-  .tl-watermark {
-    display: none;
-  }
-
-  .tl-day-group {
-    grid-template-columns: 80px 1fr;
-  }
-
-  .tl-date {
-    padding: 28px 16px 28px 24px;
-    position: static;
-  }
-
-  .tl-day-num {
-    font-size: 38px;
-  }
+  .tl-hero { grid-template-columns: 1fr; }
+  .tl-hero-visual { margin-top: 20px; justify-content: flex-start; }
+  .tl-hero-mascot { height: 240px; }
+  .tl-watermark { display: none; }
+  .tl-day-group { grid-template-columns: 80px 1fr; }
+  .tl-date { padding: 16px 10px 16px 14px; position: static; }
+  .tl-day-num { font-size: 22px; }
 }
-
 @media (max-width: 640px) {
-  .tl-hero {
-    padding: 36px 24px 0;
-  }
+  .tl-hero { padding: 36px 24px 0; }
+  .tl-body { padding-left: 0 !important; padding-right: 0 !important; }
 
-  .tl-body {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .tl-day-group {
-    grid-template-columns: 1fr;
-  }
-
+  /* Date row — align left */
+  .tl-day-group { grid-template-columns: 1fr; }
   .tl-date {
+    justify-content: flex-start;
     border-right: none;
     border-bottom: 1px solid #ede8f2;
-    padding: 20px 24px;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 10px;
+    padding: 14px 24px;
   }
 
-  .tl-weekday {
-    margin-top: 0;
-  }
+  /* Vertical line centred on icon: 20px left-pad + 24px half-icon = 44px */
+  .tl-events::before { left: 44px; }
 
-  .tl-events::before {
-    left: 35px;
-  }
-
+  /* Event grid: [icon] [content] [time] — single row, time top-aligned with title */
   .tl-event {
-    grid-template-columns: 24px 44px 1fr auto;
-    gap: 10px;
-    padding: 16px 16px 16px 24px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    grid-template-rows: auto;
+    align-items: start;
+    gap: 0 14px;
+    padding: 16px 16px 16px 20px;
   }
 
-  .tl-cta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+  /* Hide spine dot */
+  .tl-spine-dot { display: none; }
+
+  /* Icon → col 1, centred vertically */
+  .tl-event-icon {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
   }
+
+  /* Content → col 2, full height */
+  .tl-event-content {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  /* Time → col 3, top-aligned so it sits level with the strong title */
+  .tl-time {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+    font-size: 10px;
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+
+  .tl-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
-
 @media (max-width: 480px) {
-  .tl-hero {
-    padding: 28px 16px 0;
-    gap: 16px;
-  }
-
-  .tl-hero h1 {
-    font-size: clamp(28px, 9vw, 44px);
-    letter-spacing: -2px;
-  }
-
-  .tl-hero-mascot {
-    height: 200px;
-  }
-
-  .tl-breadcrumb {
-    padding: 85px 10px 15px;
-  }
-
-  .tl-event {
-    grid-template-columns: 20px 1fr auto;
-    gap: 8px;
-    padding: 14px 16px;
-  }
-
-  .tl-event-time {
-    display: none;
-  }
-
-  .tl-event-title {
-    font-size: 13px;
-  }
-
-  .tl-date {
-    padding: 16px 16px;
-  }
-
-  .tl-day-num {
-    font-size: 28px;
-  }
-
-  .tl-cta {
-    padding: 20px 16px;
-  }
+  .tl-hero { padding: 28px 16px 0; gap: 16px; }
+  .tl-hero h1 { font-size: clamp(28px, 9vw, 44px); letter-spacing: -2px; }
+  .tl-hero-mascot { height: 200px; }
+  .tl-breadcrumb { padding: 85px 10px 15px; }
+  .tl-day-num { font-size: 28px; }
+  .tl-date { padding: 14px 16px; }
+  .tl-cta { padding: 20px 16px; }
 }
-
 @media (max-width: 360px) {
-  .tl-hero h1 {
-    font-size: 24px;
-  }
-
-  .tl-event-tag {
-    display: none;
-  }
+  .tl-hero h1 { font-size: 24px; }
+  .tl-event-tag { display: none; }
 }
